@@ -16,8 +16,13 @@ public class Cuenta {
 		throw new UnsupportedOperationException();
 	}
 
+	/**
+	 * Crea una factura asociada a esta cuenta si el importe es mayor a 0.
+	 *
+	 * @throws RuntimeException si el importe es 0 o negativo.
+	 */
 	public void CrearFactura() {
-		if (_importe > 0){
+		if (_importe > 0) {
 			_factura = new Factura(_importe);
 		} else {
 			throw new RuntimeException("No se puede crear la factura, debido a que su importe es 0");
@@ -44,6 +49,12 @@ public class Cuenta {
 		throw new UnsupportedOperationException();
 	}
 
+	/**
+	 * Calcula el importe total de la cuenta sumando los importes de todas las comandas asociadas.
+	 *
+	 * @return el importe total calculado.
+	 * @throws RuntimeException si el importe calculado es 0.
+	 */
 	public Double CalcularImporte() {
 		_importe = 0.0;
 		for (Comanda comanda : _comandas) {
