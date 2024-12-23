@@ -8,6 +8,7 @@ public class ProductoCarta {
 	private String _nombre;
 	private String _categoria;
 	private Double _precio;
+
 	public Comanda _unnamed_Comanda_;
 	public Carta _unnamed_Carta_;
 	public Carta _unnamed_Carta_2;
@@ -16,4 +17,9 @@ public class ProductoCarta {
 	public Vector<Ingrediente> _unnamed_Ingrediente_ = new Vector<Ingrediente>();
 	public Ingrediente _unnamed_Ingrediente_2;
 	public Vector<Ingrediente> _formado_por = new Vector<Ingrediente>();
+
+	public void set_precio(Double _precio) {
+		this._precio = _precio;
+	}
 }
+

@@ -7,7 +7,7 @@ import Modelo.Observer;
 
 public class Comanda extends Subject {
 	private int _iD;
-	private Double _importe;
+	public Double _importe;
 	private String _estado;
 	private Comanda _subjectstate;
 	public Cuenta _unnamed_Cuenta_;

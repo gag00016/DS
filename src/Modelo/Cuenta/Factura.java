@@ -6,9 +6,13 @@ public class Factura {
 	private int _iD;
 	private int _codigo;
 	private Date _fecha;
-	private int _importe;
+	public Double _importe;
 	private String _metodoPago;
 	public Cuenta _genera;
+
+	public Factura(Double _importe) {
+		this._importe = _importe;
+	}
 
 	public void CrearFactura() {
 		throw new UnsupportedOperationException();

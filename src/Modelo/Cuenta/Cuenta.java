@@ -2,7 +2,6 @@ package Modelo.Cuenta;
 
 import Modelo.Restaurante.Mesa;
 import java.util.Vector;
-import Modelo.Cuenta.Comanda;
 
 public class Cuenta {
 	private int _iD;
@@ -18,7 +17,11 @@ public class Cuenta {
 	}
 
 	public void CrearFactura() {
-		_factura = new Factura();
+		if (_importe > 0){
+			_factura = new Factura(_importe);
+		} else {
+			throw new RuntimeException("No se puede crear la factura, debido a que su importe es 0");
+		}
 	}
 
 	public void AnadirDescuento() {
@@ -46,7 +49,10 @@ public class Cuenta {
 		for (Comanda comanda : _comandas) {
 			_importe += comanda.get_importe();
 		}
-		if (_importe > 0) return _importe;
-		throw new RuntimeException("El importe es 0");
+		if (_importe > 0) {
+			return _importe;
+		} else {
+			throw new RuntimeException("El importe es 0");
+		}
 	}
 }
